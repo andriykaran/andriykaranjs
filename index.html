@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>hello</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+
+<body>
+<table id="exeleolline">
+	<tr>
+		<th>Row Number</th>
+		<th>Item Description</th>
+		<th>Irem Price</th>
+		<th>Quantity</th>
+		<th>Sub-Total</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>Nike</td>
+		<td>
+			<form>
+				<input type="number" id="price1">
+			</form>
+		</td>
+		<td>
+			<form>
+				<input type="number" id="quantity1">
+			</form>
+		</td>
+		<td id="total1"></td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>Converse</td>
+		<td>
+			<form>
+				<input type="number" id="price2">
+			</form>
+		</td>
+		<td>
+			<form>
+				<input type="number" id="quantity2">
+			</form>
+		</td>
+		<td id="total2"></td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>Adidas</td>
+		<td>
+			<form>
+				<input type="number" id="price3">
+			</form>
+		</td>
+		<td>
+			<form>
+				<input type="number" id="quantity3">
+			</form>
+		</td>
+		<td id="total3"></td>
+	</tr>
+	<tr>
+	<td>4</td>
+	<td>Reebok</td>
+	<td>
+		<form>
+			<input type="number" id="price4">
+		</form>
+	</td>
+		<td>
+			<form>
+				<input type="number" id="quantity4">
+			</form>
+		</td>
+	<td id="total4"></td>
+</tr>
+	<tr>
+		<td>5</td>
+		<td>Vans</td>
+		<td>
+			<form>
+				<input type="number" id="price5">
+			</form>
+		</td>
+		<td>
+			<form>
+				<input type="number" id="quantity5">
+			</form>
+		</td>
+		<td id="total5"></td>
+	</tr>
+	<tr>
+		<td>6</td>
+		<td>Fila</td>
+		<td>
+			<form>
+				<input type="number" id="price6">
+			</form>
+		</td>
+		<td>
+			<form>
+				<input type="number" id="quantity6">
+			</form>
+		</td>
+		<td id="total6"></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>
+			<!--<input  type="button" value="Run" onclick="subtotal()">-->
+		</td>
+		<td id="total-qty">Total Qty</td>
+		<td id="total-amaund">Total Amaund</td>
+		<td></td>
+	</tr>
+</table>
+
+<script type="text/javascript">
+	var t;
+	t=document.getElementById("exeleolline");
+    t.addEventListener('input', function subtotal() {
+        var q1;
+        var q2;
+        var q3;
+        var q4;
+        var q5;
+        var q6;
+
+        q1=document.getElementById("quantity1").value;
+        q2=document.getElementById("quantity2").value;
+        q3=document.getElementById("quantity3").value;
+        q4=document.getElementById("quantity4").value;
+        q5=document.getElementById("quantity5").value;
+        q6=document.getElementById("quantity6").value;
+	    s1=document.getElementById("price1").value * q1;
+        s2=document.getElementById("price2").value * q2;
+        s3=document.getElementById("price3").value * q3;
+        s4=document.getElementById("price4").value * q4;
+        s5=document.getElementById("price5").value * q5;
+        s6=document.getElementById("price6").value * q6;
+
+	    document.getElementById("total1").innerHTML = '$' + s1;
+        document.getElementById("total2").innerHTML = '$' + s2;
+        document.getElementById("total3").innerHTML = '$' + s3;
+        document.getElementById("total4").innerHTML = '$' + s4;
+        document.getElementById("total5").innerHTML = '$' + s5;
+        document.getElementById("total6").innerHTML = '$' + s6;
+
+        var tq;
+        tq= parseInt(q1) + parseInt(q2) + parseInt(q3) + parseInt(q4) + parseInt(q5) + parseInt(q6);
+        document.getElementById("total-qty").innerHTML ="Total Qty " + tq;
+
+        var ta;
+        ta= parseInt(s1)+parseInt(s2)+parseInt(s3)+parseInt(s3)+parseInt(s5)+parseInt(s6);
+        document.getElementById("total-amaund").innerHTML = "Total Amaund " + ta;
+        console.log(ta)
+        })
+
+</script>
+</body>
+
+</html> 
